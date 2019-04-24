@@ -11,6 +11,7 @@ import {
 import Map from "../container/Map";
 import BottomNav from "./BottomNav";
 import config from "../../config";
+import { withNavigation } from "react-navigation";
 
 class MapSearch extends Component {
   render() {
@@ -38,7 +39,7 @@ class MapSearch extends Component {
         </View>
         
         <Map />
-        <BottomNav />
+        <BottomNav nav={this.props.navigation} />
 
       </View>
     );
@@ -83,4 +84,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MapSearch;
+export default withNavigation(MapSearch);

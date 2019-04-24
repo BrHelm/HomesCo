@@ -8,6 +8,7 @@ import {
   Search,
   SearchFilters,
   MapSearch,
+  Details
 } from "./components/screens";
 
 import {
@@ -25,8 +26,9 @@ import {
 const BrowseStack = StackNavigator({
   feed: MainFeed,
   map: MapSearch,
-  camera: Camera,
   profile: Profile,
+  camera: Camera,
+  details: Details,
 },
   {
     navigationOptions: () => ({

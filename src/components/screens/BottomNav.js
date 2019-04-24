@@ -3,10 +3,16 @@ import {
   StyleSheet,
   View,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import config from "../../config";
 
 class BottomNav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    
+  }
   render() {
     return (
       <View style={styles.footer}>
@@ -20,11 +26,26 @@ class BottomNav extends Component {
             flexWrap: "wrap"
           }}
         >
-          <Image style={styles.icon} source={config.images.houseIcon} />
-          <Image style={styles.icon} source={config.images.searchIcon} />
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => this.props.nav.popToTop()}>
+            <Image style={styles.icon} source={config.images.houseIcon} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => this.props.nav.navigate("search")}>
+            <Image style={styles.icon} source={config.images.searchIcon} />
+          </TouchableOpacity>
+
           <Image style={styles.icon} source={config.images.calendarIcon} />
           <Image style={styles.icon} source={config.images.mailIcon} />
-          <Image style={styles.icon} source={config.images.profileIcon} />
+
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => this.props.nav.navigate("profile")}>
+            <Image style={styles.icon} source={config.images.profileIcon} />
+          </TouchableOpacity>
+
         </View>
       </View>
     );

@@ -7,6 +7,8 @@ import Search from "./Search";
 import SearchFilters from "./SearchFilters";
 import MapSearch from "./MapSearch";
 import BottomNav from "./BottomNav";
+import Details from "./Details";
+import TopNav from "./TopNav";
 
 export { MainFeed, Login, Profile, Camera, Register, Search, 
-  SearchFilters, MapSearch, BottomNav };
+  SearchFilters, MapSearch, BottomNav, TopNav, Details };

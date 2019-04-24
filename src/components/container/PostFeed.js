@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { Post } from "../presentation";
 import { FlatList } from "react-native";
+import { withNavigation } from 'react-navigation';
 
 class PostFeed extends Component {
+  constructor(props) {
+    super(props);
+  }
 
   _renderPost({ item }) {
-    return <Post item={item} />;
+    return (<Post item={item} />);
   }
 
   _returnKey(item) {
@@ -14,7 +18,7 @@ class PostFeed extends Component {
 
   render() {
     return (
-      <FlatList
+      <FlatList navigation={this.props.navigation}
         data={[
           1,
           2,
@@ -44,4 +48,4 @@ class PostFeed extends Component {
   }
 }
 
-export default PostFeed;
+export default withNavigation(PostFeed);

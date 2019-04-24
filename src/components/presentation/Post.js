@@ -9,10 +9,11 @@ import {
   TouchableOpacity
 } from "react-native";
 import config from "../../config";
+import { withNavigation } from "react-navigation";
 
 class Post extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       liked: false,
       screenWidth: Dimensions.get("window").width
@@ -98,7 +99,7 @@ class Post extends Component {
               <TouchableOpacity
                 style={styles.BuyButtonStyle}
                 activeOpacity={0.8}
-                onPress={() => this.props.navigate("camera")}>
+                onPress={() => this.props.navigation.navigate("details")}>
                 <Text style={styles.TextStyle}> buy </Text>
               </TouchableOpacity>
             </View>
@@ -194,4 +195,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Post;
+export default withNavigation(Post);
